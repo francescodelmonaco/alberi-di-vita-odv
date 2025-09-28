@@ -1,59 +1,162 @@
-import Image from "next/image";
-import Footer from "./components/footer";
+import Link from 'next/link';
+import { ArrowRight, Heart, Users, Handshake } from 'lucide-react';
+import { friends } from '@/lib/data';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-accent-gray to-white py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-6xl font-bold text-primary-green mb-6 leading-tight">
+              Alberi di Vita OdV
+            </h1>
+            <p className="text-xl lg:text-2xl text-gray-700 mb-8 leading-relaxed">
+              Un'associazione di volontariato nata nel cuore di Brescia per rispondere
+              all'appello di Papa Francesco. Ci dedichiamo al sostegno della comunità locale,
+              con particolare attenzione agli anziani e alle famiglie.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/progetti"
+                className="bg-primary-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center group"
+              >
+                Scopri i nostri progetti
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                href="/dona"
+                className="border-2 border-primary-green text-primary-green px-8 py-4 rounded-lg font-semibold hover:bg-primary-green hover:text-white transition-all duration-200"
+              >
+                Sostienici
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
 
-      <Footer />
+      {/* Attività Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-green mb-4">
+              Le nostre attività
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Ogni giorno lavoriamo per creare connessioni significative e supportare
+              la nostra comunità attraverso iniziative concrete e innovative.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-8 rounded-xl hover:shadow-lg transition-all duration-300 border border-gray-100">
+              <div className="w-16 h-16 bg-secondary-green/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Heart className="w-8 h-8 text-primary-green" />
+              </div>
+              <h3 className="text-xl font-semibold text-primary-green mb-4">
+                Sostegno agli anziani
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Programmi di accompagnamento e supporto per la terza età,
+                con attività ricreative e servizi di assistenza personalizzati.
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-xl hover:shadow-lg transition-all duration-300 border border-gray-100">
+              <div className="w-16 h-16 bg-secondary-green/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="w-8 h-8 text-primary-green" />
+              </div>
+              <h3 className="text-xl font-semibold text-primary-green mb-4">
+                Iniziative familiari
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Eventi e attività per coinvolgere tutta la famiglia,
+                creando momenti di condivisione e crescita comunitaria.
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-xl hover:shadow-lg transition-all duration-300 border border-gray-100">
+              <div className="w-16 h-16 bg-secondary-green/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Handshake className="w-8 h-8 text-primary-green" />
+              </div>
+              <h3 className="text-xl font-semibold text-primary-green mb-4">
+                Collaborazioni
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Partnership con enti locali e altre associazioni
+                per massimizzare l'impatto delle nostre iniziative.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="py-20 bg-accent-gray">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-green mb-4">
+              I nostri partner
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Insieme alle realtà che condividono i nostri valori, costruiamo
+              una rete di supporto solida e duratura per la comunità bresciana.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {friends.map((friend, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+                <Link
+                  href={friend.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group"
+                >
+                  <h3 className="font-semibold text-primary-green mb-3 group-hover:text-secondary-green transition-colors">
+                    {friend.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    {friend.description}
+                  </p>
+                  <div className="flex items-center text-primary-green group-hover:text-secondary-green transition-colors">
+                    <span className="text-sm font-medium">Visita il sito</span>
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary-green">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+            Unisciti a noi
+          </h2>
+          <p className="text-lg text-brand-white mb-8 leading-relaxed">
+            La nostra forza siamo le persone. Diventa volontario o sostieni
+            i nostri progetti per fare la differenza nella comunità.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contatti"
+              className="bg-secondary-green text-primary-green px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-200"
+            >
+              Diventa volontario
+            </Link>
+            <Link
+              href="/dona"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-green transition-all duration-200"
+            >
+              Dona ora
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
