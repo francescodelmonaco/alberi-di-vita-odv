@@ -4,6 +4,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { navItems } from '@/lib/data';
+import Image from 'next/image';
+
+// img
+import Logo from '../../public/logo-150x150.png'
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,9 +18,9 @@ export default function Navbar() {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <Link href="/" className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-primary-green rounded-full flex items-center justify-center">
-                            <span className="text-white font-bold text-lg">A</span>
-                        </div>
+                        <figure className="w-10 h-10 rounded-full flex items-center justify-center">
+                            <Image src={Logo} alt="Logo Alberi di Vita OdV" className='border border-(--primary-green) rounded-full shadow' />
+                        </figure>
                         <div className="hidden sm:block">
                             <h1 className="text-primary-green font-bold text-lg tracking-wide">
                                 Alberi di Vita OdV
@@ -30,7 +34,7 @@ export default function Navbar() {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary-green hover:bg-gray-50 rounded-md transition-colors"
+                                className="px-4 py-2 font-medium text-gray-700 hover:text-(--primary-green) hover:bg-gray-50 rounded-md transition-colors"
                             >
                                 {item.name}
                             </Link>
