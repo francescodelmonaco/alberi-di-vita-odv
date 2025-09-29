@@ -28,11 +28,11 @@ export const socials: Social[] = [
 
 export const contacts: Contact[] = [
     {
-        name: "Segreteria Sociale:",
+        name: "Segreteria sociale:",
         contact: "+39 392 9169439"
     },
     {
-        name: "Segreteria/Prenotazioni:",
+        name: "Segreteria/prenotazioni:",
         contact: "+39 350 0097205"
     },
     {
@@ -48,11 +48,11 @@ export const contacts: Contact[] = [
         contact: "presidente@alberidivita.it"
     },
     {
-        name: "Email Coordinamento:",
+        name: "Email coordinamento:",
         contact: "coordinamento@alberidivita.it"
     },
     {
-        name: "Email Educatrice:",
+        name: "Email educatrice:",
         contact: "educativa@alberidivita.it"
     },
 ];

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 :root {
   --background: #ffffff;
@@ -24,49 +25,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: system-ui, -apple-system, sans-serif;
-}
-
-/* Utility classes for brand colors */
-.text-primary-green {
-  color: var(--primary-green);
-}
-
-.text-secondary-green {
-  color: var(--secondary-green);
-}
-
-.text-third-green {
-  color: var(--third-green);
-}
-
-.text-brand-white {
-  color: var(--white);
-}
-
-.bg-primary-green {
-  background-color: var(--primary-green);
-}
-
-.bg-secondary-green {
-  background-color: var(--secondary-green);
-}
-
-.bg-third-green {
-  background-color: var(--third-green);
-}
-
-.bg-brand-white {
-  background-color: var(--white);
-}
-
-.bg-accent-gray {
-  background-color: var(--accent-gray);
-}
-
-.border-primary-green {
-  border-color: var(--primary-green);
-}
-
-.border-secondary-green {
-  border-color: var(--secondary-green);
 }
