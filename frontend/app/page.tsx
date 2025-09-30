@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Heart, Users, Handshake } from 'lucide-react';
-import { friends } from '@/lib/data';
+import PartnersCarousel from './components/partners-carousel';
 
 export default function Home() {
   return (
@@ -14,10 +14,11 @@ export default function Home() {
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
               Alberi di Vita OdV
             </h1>
-            <p className="text-xl lg:text-2xl text-white mb-8 leading-relaxed drop-shadow-lg">
-              Un'associazione di volontariato nata nel cuore di Brescia per rispondere
-              all'appello di Papa Francesco. Ci dedichiamo al sostegno della comunità locale,
-              con particolare attenzione agli anziani e alle famiglie.
+            <p className="text-xl lg:text-2xl text-white mb-4 leading-relaxed drop-shadow-lg">
+              Siamo chiamati ad essere "Alberi di Vita" che assorbono l’inquinamento dell’indifferenza e restituiscono al mondo l’ossigeno dell’amore
+            </p>
+            <p className="text-lg lg:text-xl text-white mb-8 leading-relaxed drop-shadow-lg">
+              Papa Francesco – Assisi 20/09/2016
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -95,43 +96,7 @@ export default function Home() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-20 bg-(--accent-gray)">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-(--primary-green) mb-4">
-              I nostri partner
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Insieme alle realtà che condividono i nostri valori, costruiamo
-              una rete di supporto solida e duratura per la comunità bresciana.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {friends.map((friend, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
-                <Link
-                  href={friend.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block group"
-                >
-                  <h3 className="font-semibold text-(--primary-green) mb-3 group-hover:text-(--secondary-green) transition-colors">
-                    {friend.name}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    {friend.description}
-                  </p>
-                  <div className="flex items-center text-(--primary-green) group-hover:text-(--secondary-green) transition-colors">
-                    <span className="text-sm font-medium">Visita il sito</span>
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PartnersCarousel />
 
       {/* CTA Section */}
       <section className="py-20 bg-(--primary-green)">
