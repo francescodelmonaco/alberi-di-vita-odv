@@ -15,7 +15,7 @@ export default function Navbar() {
     const pathname = usePathname();
 
     return (
-        <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-sm">
+        <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-sm shadow">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
@@ -39,8 +39,8 @@ export default function Navbar() {
                                     key={item.name}
                                     href={item.href}
                                     className={`px-4 py-2 font-medium rounded-md transition-colors ${isActive
-                                            ? 'text-white bg-[var(--primary-green)] shadow-sm'
-                                            : 'text-gray-700 hover:text-[var(--primary-green)] hover:bg-gray-50'
+                                        ? 'text-white bg-[var(--primary-green)] shadow-sm'
+                                        : 'text-gray-700 hover:text-[var(--primary-green)] hover:bg-gray-50'
                                         }`}
                                 >
                                     {item.name}
@@ -71,8 +71,8 @@ export default function Navbar() {
                                         key={item.name}
                                         href={item.href}
                                         className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${isActive
-                                                ? 'text-white bg-[var(--primary-green)] shadow-sm'
-                                                : 'text-gray-700 hover:text-[var(--primary-green)] hover:bg-gray-50'
+                                            ? 'text-white bg-[var(--primary-green)] shadow-sm'
+                                            : 'text-gray-700 hover:text-[var(--primary-green)] hover:bg-gray-50'
                                             }`}
                                         onClick={() => setIsMenuOpen(false)}
                                     >

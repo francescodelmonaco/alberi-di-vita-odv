@@ -34,3 +34,10 @@ export interface Activity {
     image?: string;
     link?: string;
 }
+
+export interface Event {
+    anno: string,
+    titolo: string,
+    descrizione: string,
+    icona: string,
+}

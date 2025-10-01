@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { contacts, locations } from '@/lib/data';
 import Image from 'next/image';
@@ -16,7 +15,7 @@ export default function Contatti() {
                         <h1 className="text-3xl font-bold text-white mb-6 leading-tight">
                             Contatti
                         </h1>
-                        <p className="text-lg text-(--third-white) mb-8 leading-relaxed">
+                        <p className="text-lg text-(--third-white) leading-relaxed">
                             Siamo qui per te. Contattaci per informazioni sui nostri progetti,
                             per diventare volontario o per qualsiasi altra necessità.
                         </p>
@@ -84,7 +83,7 @@ export default function Contatti() {
                             <div className="w-12 h-12 bg-(--secondary-green)/10 rounded-full flex items-center justify-center">
                                 <MapPin className="text-(--primary-green)" size={24} />
                             </div>
-                            <h3 className="text-3xl lg:text-4xl font-bold text-(--primary-green)">Le nostre sedi</h3>
+                            <h3 className="text-(--primary-green) font-bold text-2xl">Le nostre sedi</h3>
                         </div>
 
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -150,7 +149,7 @@ export default function Contatti() {
                 </div>
             </section>
 
-            {/* CTA Section */}
+            {/* CTA Section
             <section className="py-20 bg-(--primary-green)">
                 <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-white mb-6">
@@ -177,7 +176,7 @@ export default function Contatti() {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 }
