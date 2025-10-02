@@ -1,4 +1,9 @@
-export default function Hero({ pageName, pageDescription }: { pageName: string, pageDescription: string }) {
+interface HeroProps {
+    pageName: string;
+    pageDescription: string;
+};
+
+export default function Hero({ pageName, pageDescription }: HeroProps) {
     return (
         <section className="py-10 lg:py-16 bg-(--primary-green)">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

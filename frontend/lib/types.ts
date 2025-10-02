@@ -43,3 +43,9 @@ export interface Event {
     descrizione: string,
     icona: ElementType,
 }
+
+export interface ProjectCardProps {
+    title: string;
+    description: string;
+    slug: string;
+}
