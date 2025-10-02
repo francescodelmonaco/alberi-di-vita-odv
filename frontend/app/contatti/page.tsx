@@ -5,23 +5,16 @@ import Image from 'next/image';
 // img
 import Logo from '../../public/logo-150x150.png'
 
+// components
+import Hero from '../components/hero';
+
 export default function Contatti() {
     return (
         <div className="min-h-screen">
-            {/* Hero Section */}
-            <section className="py-10 lg:py-16 bg-(--primary-green)">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h1 className="text-3xl font-bold text-white mb-6 leading-tight">
-                            Contatti
-                        </h1>
-                        <p className="text-lg text-(--third-white) leading-relaxed">
-                            Siamo qui per te. Contattaci per informazioni sui nostri progetti,
-                            per diventare volontario o per qualsiasi altra necessità.
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <Hero
+                pageName="Contatti"
+                pageDescription="Siamo qui per te. Contattaci per informazioni sui nostri progetti, per diventare volontario o per qualsiasi altra necessità."
+            />
 
             {/* Numeri di telefono */}
             <section className="py-20 bg-white">

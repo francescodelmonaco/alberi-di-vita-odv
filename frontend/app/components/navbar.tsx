@@ -40,7 +40,7 @@ export default function Navbar() {
                                     href={item.href}
                                     className={`px-4 py-2 font-medium rounded-md transition-colors ${isActive
                                         ? 'text-white bg-[var(--primary-green)] shadow-sm'
-                                        : 'text-gray-700 hover:text-[var(--primary-green)] hover:bg-gray-50'
+                                        : 'text-gray-700 hover:text-[var(--primary-green)] hover:bg-gray-100'
                                         }`}
                                 >
                                     {item.name}
