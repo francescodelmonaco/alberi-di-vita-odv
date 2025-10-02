@@ -1,3 +1,5 @@
+import type { ElementType } from "react";
+
 export interface Social {
     name: string;
     link: string;
@@ -16,7 +18,7 @@ export interface Location {
     cap: string;
 }
 
-export interface Friend {
+export interface Partner {
     name: string;
     link: string;
     image?: string;
@@ -39,5 +41,5 @@ export interface Event {
     anno: string,
     titolo: string,
     descrizione: string,
-    icona: string,
+    icona: ElementType,
 }

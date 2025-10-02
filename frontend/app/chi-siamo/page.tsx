@@ -1,6 +1,6 @@
 import Timeline from "../components/timeline"
 
-export default function About() {
+export default function ChiSiamo() {
     return (
         <div className="pb-20 bg-white">
             {/* Hero Section */}

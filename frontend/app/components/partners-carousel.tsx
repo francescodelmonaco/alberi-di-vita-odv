@@ -57,7 +57,7 @@ export default function PartnersCarousel() {
         }
     }, [isHovered, isLoaded]);
 
-    // Creiamo un array duplicato per il loop continuo senza interruzioni
+    // array per loop
     const duplicatedFriends = [...friends, ...friends, ...friends, ...friends, ...friends];
 
     return (
@@ -101,7 +101,7 @@ export default function PartnersCarousel() {
                                             rel="noopener noreferrer"
                                             className="block h-full"
                                         >
-                                            <div className="bg-white rounded-xl p-6 h-full border border-gray-100 hover:border-green-200 transition-all duration-300 hover:shadow-xl group-hover:shadow-2xl transform group-hover:-translate-y-1">
+                                            <div className="bg-white rounded-xl p-6 h-full border border-gray-100 hover:border-(--secondary-green) transition-all duration-300 hover:shadow-xl group-hover:shadow-2xl transform group-hover:-translate-y-1">
                                                 {/* Container immagine */}
                                                 <div className="relative h-24 mb-6 flex items-center justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-green-50 transition-colors duration-300">
                                                     <div className="relative w-full h-full">
@@ -117,7 +117,7 @@ export default function PartnersCarousel() {
 
                                                 {/* Contenuto */}
                                                 <div className="text-center">
-                                                    <h3 className="font-semibold text-lg mb-3 transition-colors duration-300 group-hover:text-green-700"
+                                                    <h3 className="font-semibold text-lg mb-3 transition-colors duration-300 group-hover:text-(--secondary-green)"
                                                         style={{ color: 'var(--primary-green)' }}>
                                                         {friend.name}
                                                     </h3>
@@ -126,7 +126,7 @@ export default function PartnersCarousel() {
                                                     </p>
 
                                                     {/* Link di visita */}
-                                                    <div className="flex items-center justify-center text-green-600 group-hover:text-green-700 transition-colors duration-300">
+                                                    <div className="flex items-center justify-center text-(--secondary-green) group-hover:text-(--primary-green) transition-colors duration-300">
                                                         <span className="text-sm font-medium">Visita il sito</span>
                                                         <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                                                     </div>
