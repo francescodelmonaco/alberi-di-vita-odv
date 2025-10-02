@@ -1,11 +1,9 @@
-import { title } from 'process';
 import { Social, Contact, Location, Partner, NavItem, Event, ProjectCardProps } from './types';
 import { Users, Heart, Handshake, Star, HousePlus, Hospital } from 'lucide-react';
 
 export const navItems: NavItem[] = [
     { name: 'Chi siamo', href: '/chi-siamo' },
     { name: 'Progetti', href: '/progetti' },
-    { name: 'Eventi', href: '/eventi' },
     { name: 'Contatti', href: '/contatti' },
     { name: 'Dona', href: '/dona' },
 ];
@@ -78,7 +76,7 @@ export const friends: Partner[] = [
     {
         name: "Fondazione Casa di Dio",
         link: "http://casadidio.eu/",
-        image: "/partners/fondazione-casa-di-dio.jpg",
+        image: "/partners/fondazione-casa-di-dio.png",
         description: "Fondazione impegnata nel supporto alla comunità locale"
     },
     {
@@ -106,9 +104,21 @@ export const friends: Partner[] = [
         description: "Parrocchia di riferimento per la sede operativa"
     },
     {
-        name: "Fondazione Comunità Bresciana – Fondo Bruno Marisa Marniga",
+        name: "Fondo Bruno Marisa Marniga",
         link: "http://www.fondazionebresciana.org/",
-        image: "/partners/fondazione-della-comunità-bresciana.webp",
+        image: "/partners/fondazione-della-comunità-bresciana.png",
+        description: "Fondo dedicato al supporto di iniziative sociali"
+    },
+    {
+        name: "Fondo per il sostegno all’infanzia Vincenzo e Itala Visenzi",
+        link: "http://www.fondazionebresciana.org/",
+        image: "/partners/fondazione-della-comunità-bresciana.png",
+        description: "Fondo dedicato al supporto di iniziative sociali"
+    },
+    {
+        name: "Club Don Abele Rodella Stocchetta",
+        link: "http://www.fondazionebresciana.org/",
+        image: "/partners/fondazione-della-comunità-bresciana.png",
         description: "Fondo dedicato al supporto di iniziative sociali"
     },
     {
@@ -132,20 +142,8 @@ export const friends: Partner[] = [
     {
         name: "Lasercom",
         link: "https://lasercom.it/",
-        image: "/partners/lasercom.svg",
+        image: "/partners/lasercom.png",
         description: "Partner tecnologico e di comunicazione"
-    },
-    {
-        name: "Club Don Abele Rodella Stocchetta",
-        link: "https://google.it/",
-        image: "",
-        description: ""
-    },
-    {
-        name: "Fondo per il sostegno all’infanzia Vincenzo e Itala Visenzi",
-        link: "https://google.it/",
-        image: "",
-        description: ""
     }
 ];
 

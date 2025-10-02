@@ -31,7 +31,7 @@ export default function Navbar() {
                     </Link>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-1">
+                    <div className="hidden md:flex items-center space-x-2">
                         {navItems.map((item) => {
                             const isActive = pathname === item.href || (pathname === '/' && item.href === '/');
                             return (
