@@ -3,10 +3,28 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+// icons
 import { ExternalLink } from 'lucide-react';
-import { friends } from '@/lib/data';
+import { Partner } from '@/lib/types';
 
 export default function PartnersCarousel() {
+    // fetch partners
+    const [partners, setPartners] = useState<Partner[]>([]);
+    useEffect(() => {
+        async function fetchPartners() {
+            try {
+                const res = await fetch('http://127.0.0.1:8000/api/partners');
+                if (!res.ok) throw new Error('Errore nel fetch');
+                const data = await res.json();
+                setPartners(data);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchPartners();
+    }, []);
+
     const [currentTranslate, setCurrentTranslate] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -41,7 +59,7 @@ export default function PartnersCarousel() {
         if (!isHovered && isLoaded) {
             const interval = setInterval(() => {
                 setCurrentTranslate(prev => {
-                    const itemWidth = 25 / friends.length; // Larghezza di un singolo elemento
+                    const itemWidth = 25 / partners.length; // Larghezza di un singolo elemento
                     const newTranslate = prev + (itemWidth * 0.01); // Movimento molto più piccolo e graduale
 
                     // Reset quando raggiunge la fine del primo set
@@ -58,7 +76,7 @@ export default function PartnersCarousel() {
     }, [isHovered, isLoaded]);
 
     // array per loop
-    const duplicatedFriends = [...friends, ...friends, ...friends, ...friends, ...friends];
+    const duplicatedPartners = [...partners, ...partners, ...partners, ...partners, ...partners];
 
     return (
         <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
@@ -84,19 +102,19 @@ export default function PartnersCarousel() {
                             className="flex"
                             style={{
                                 transform: `translateX(-${currentTranslate}%)`,
-                                width: `${duplicatedFriends.length * (100 / itemsPerView)}%`,
+                                width: `${duplicatedPartners.length * (100 / itemsPerView)}%`,
                                 transition: 'transform 0.1s linear' // Transizione molto leggera per fluidità
                             }}
                         >
-                            {duplicatedFriends.map((friend, index) => (
+                            {duplicatedPartners.map((partner, index) => (
                                 <div
-                                    key={`${friend.name}-${index}`}
+                                    key={index}
                                     className="flex-shrink-0 p-6"
-                                    style={{ width: `${100 / duplicatedFriends.length}%` }}
+                                    style={{ width: `${100 / duplicatedPartners.length}%` }}
                                 >
                                     <div className="group h-full">
                                         <Link
-                                            href={friend.link}
+                                            href={partner.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="block h-full"
@@ -106,8 +124,8 @@ export default function PartnersCarousel() {
                                                 <div className="relative h-24 mb-6 flex items-center justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-green-50 transition-colors duration-300">
                                                     <div className="relative w-full h-full">
                                                         <Image
-                                                            src={friend.image || '/friends/default.png'}
-                                                            alt={friend.name}
+                                                            src={`http://127.0.0.1:8000/${partner.image}`}
+                                                            alt={partner.name}
                                                             fill
                                                             className="object-contain filter group-hover:brightness-110 transition-all duration-300"
                                                             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
@@ -119,10 +137,10 @@ export default function PartnersCarousel() {
                                                 <div className="text-center">
                                                     <h3 className="font-semibold text-lg mb-3 transition-colors duration-300 group-hover:text-(--secondary-green)"
                                                         style={{ color: 'var(--primary-green)' }}>
-                                                        {friend.name}
+                                                        {partner.name}
                                                     </h3>
                                                     <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
-                                                        {friend.description}
+                                                        {partner.description}
                                                     </p>
 
                                                     {/* Link di visita */}
