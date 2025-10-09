@@ -1,6 +1,6 @@
 "use client";
 
-import { contacts, locations } from '@/lib/data';
+import { locations } from '@/lib/data';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -15,10 +15,12 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 
 // types
 import { PhoneNumber } from '@/lib/types';
+import { Email } from '@/lib/types';
 
 export default function Contatti() {
     // fetch numeri di telefono
     const [phones, setPhones] = useState<PhoneNumber[]>([]);
+    const [emails, setEmails] = useState<Email[]>([]);
     useEffect(() => {
         async function fetchPhones() {
             try {
@@ -29,8 +31,21 @@ export default function Contatti() {
             } catch (error) {
                 console.error(error);
             }
-        }
+        };
+
+        async function fetchEmails() {
+            try {
+                const res = await fetch('http://127.0.0.1:8000/api/emails');
+                if (!res.ok) throw new Error('Errore nel fetch');
+                const data = await res.json();
+                setEmails(data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
         fetchPhones();
+        fetchEmails();
     }, []);
 
     return (
@@ -76,13 +91,12 @@ export default function Contatti() {
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                        {contacts
-                            .filter(contact => contact.contact.includes('@'))
-                            .map((contact, index) => (
+                        {emails
+                            .map((email, index) => (
                                 <div key={index} className="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300">
-                                    <h4 className="text-(--primary-green) font-semibold text-lg mb-3">{contact.name}</h4>
+                                    <h4 className="text-(--primary-green) font-semibold text-lg mb-3">{email.name}</h4>
                                     <p className="text-gray-700 font-mono bg-(--accent-gray) px-4 py-3 rounded-lg inline-block border border-gray-200">
-                                        {contact.contact}
+                                        {email.email}
                                     </p>
                                 </div>
                             ))
@@ -127,6 +141,7 @@ export default function Contatti() {
                             allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
+                            sandbox="allow-scripts allow-same-origin allow-popups"
                         />
                     </div>
                 </div>
