@@ -144,7 +144,7 @@ function slugify(title: string) {
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/(^-|-$)/g, "");
-}
+};
 
 export const projects: ProjectCardProps[] = [
     {
