@@ -1,4 +1,4 @@
-import { Social, Contact, Location, Partner, NavItem, Event, ProjectCardProps } from './types';
+import { Social, Location, NavItem, Event, ProjectCardProps, Email } from './types';
 import { Users, Heart, Handshake, Star, HousePlus, Hospital } from 'lucide-react';
 
 export const navItems: NavItem[] = [
@@ -23,29 +23,6 @@ export const socials: Social[] = [
         name: "YouTube",
         link: "https://www.youtube.com/channel/UCPg16_-rDuVVGMZCgpvXUzA",
         icon: "youtube"
-    },
-];
-
-export const contacts: Contact[] = [
-    {
-        name: "Email info associazione:",
-        contact: "info@alberidivita.it"
-    },
-    {
-        name: "Email contabilità:",
-        contact: "contabilita@alberidivita.it"
-    },
-    {
-        name: "Email presidente:",
-        contact: "presidente@alberidivita.it"
-    },
-    {
-        name: "Email coordinamento:",
-        contact: "coordinamento@alberidivita.it"
-    },
-    {
-        name: "Email educatrice:",
-        contact: "educativa@alberidivita.it"
     },
 ];
 

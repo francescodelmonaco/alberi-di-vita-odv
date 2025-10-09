@@ -11,6 +11,11 @@ export interface PhoneNumber {
     number: string;
 }
 
+export interface Email {
+    name: string;
+    email: string;
+}
+
 export interface Contact {
     name: string;
     contact: string;
