@@ -6,6 +6,11 @@ export interface Social {
     icon: string;
 }
 
+export interface PhoneNumber {
+    name: string;
+    number: string;
+}
+
 export interface Contact {
     name: string;
     contact: string;

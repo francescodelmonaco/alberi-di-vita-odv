@@ -1,6 +1,8 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
+"use client";
+
 import { contacts, locations } from '@/lib/data';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 // img
 import Logo from '../../public/logo-150x150.png'
@@ -8,7 +10,29 @@ import Logo from '../../public/logo-150x150.png'
 // components
 import Hero from '../components/hero';
 
+// icons
+import { Mail, MapPin, Phone } from 'lucide-react';
+
+// types
+import { PhoneNumber } from '@/lib/types';
+
 export default function Contatti() {
+    // fetch numeri di telefono
+    const [phones, setPhones] = useState<PhoneNumber[]>([]);
+    useEffect(() => {
+        async function fetchPhones() {
+            try {
+                const res = await fetch('http://127.0.0.1:8000/api/phones');
+                if (!res.ok) throw new Error('Errore nel fetch');
+                const data = await res.json();
+                setPhones(data);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchPhones();
+    }, []);
+
     return (
         <div className="min-h-screen">
             <Hero
@@ -27,13 +51,12 @@ export default function Contatti() {
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                        {contacts
-                            .filter(contact => contact.contact.startsWith('+39'))
-                            .map((contact, index) => (
+                        {phones
+                            .map((phone, index) => (
                                 <div key={index} className="bg-(--accent-gray) p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300">
-                                    <h4 className="text-(--primary-green) font-semibold text-lg mb-3">{contact.name}</h4>
+                                    <h4 className="text-(--primary-green) font-semibold text-lg mb-3">{phone.name}</h4>
                                     <p className="text-gray-700 font-mono bg-white px-4 py-3 rounded-lg inline-block border border-gray-200">
-                                        {contact.contact}
+                                        {phone.number}
                                     </p>
                                 </div>
                             ))
