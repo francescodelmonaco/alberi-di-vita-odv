@@ -46,10 +46,10 @@ export interface Activity {
 }
 
 export interface Event {
-    anno: string,
-    titolo: string,
-    descrizione: string,
-    icona: any,
+    year: string,
+    name: string,
+    description: string,
+    icon: any,
 }
 
 export interface ProjectCardProps {

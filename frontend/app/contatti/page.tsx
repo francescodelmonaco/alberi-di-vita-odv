@@ -18,7 +18,7 @@ import { PhoneNumber } from '@/lib/types';
 import { Email } from '@/lib/types';
 
 export default function Contatti() {
-    // fetch numeri di telefono
+    // fetch numeri di telefono e email
     const [phones, setPhones] = useState<PhoneNumber[]>([]);
     const [emails, setEmails] = useState<Email[]>([]);
     useEffect(() => {

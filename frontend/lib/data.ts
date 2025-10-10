@@ -1,5 +1,4 @@
-import { Social, Location, NavItem, Event, ProjectCardProps, Email } from './types';
-import { Users, Heart, Handshake, Star, HousePlus, Hospital } from 'lucide-react';
+import { Social, Location, NavItem, ProjectCardProps } from './types';
 
 export const navItems: NavItem[] = [
     { name: 'Chi siamo', href: '/chi-siamo' },
@@ -39,72 +38,6 @@ export const locations: Location[] = [
         address: "Piazzetta Santi Francesco e Chiara, 1",
         cap: "25133 Brescia"
     }
-];
-
-export const events: Event[] = [
-    {
-        anno: '2016',
-        titolo: 'Fondazione Alberi di Vita OdV',
-        descrizione:
-            'Un gruppo di amici con esperienze di volontariato decide di dedicarsi alla terza e quarta età, nasce Alberi di Vita OdV nel quartiere Mompiano a Brescia.',
-        icona: HousePlus,
-    },
-    {
-        anno: '2017',
-        titolo: 'Crescita e nuovi volontari',
-        descrizione:
-            'La famiglia di Alberi di Vita si allarga: nuovi amici e volontari si uniscono, l’associazione diventa ente capofila del Punto Comunità Mompiano.',
-        icona: Users,
-    },
-    {
-        anno: '2018',
-        titolo: 'Primo Grest estivo per anziani',
-        descrizione:
-            'Viene organizzato il primo Grest estivo per anziani: sei settimane di attività pomeridiane, dal lunedì al venerdì, con grande successo e partecipazione.',
-        icona: Star,
-    },
-    {
-        anno: '2019',
-        titolo: 'Progetto Buon Vicinato',
-        descrizione:
-            'Nasce il progetto “Buon Vicinato”: compagnia agli anziani soli, ausili per la deambulazione, accompagnamento per visite mediche e commissioni quotidiane.',
-        icona: Handshake,
-    },
-    {
-        anno: '2020',
-        titolo: 'Supporto durante la pandemia',
-        descrizione:
-            'L’associazione si attiva per sostenere la comunità durante l’emergenza Covid-19, offrendo servizi di spesa, farmaci e supporto telefonico.',
-        icona: Hospital,
-    },
-    {
-        anno: '2021',
-        titolo: 'Nuove collaborazioni e progetti',
-        descrizione:
-            'Professionisti donano le loro competenze, nascono nuove collaborazioni e progetti per ampliare l’impatto sociale dell’associazione.',
-        icona: Handshake,
-    },
-    {
-        anno: '2022',
-        titolo: 'Oltre 480 associati',
-        descrizione:
-            'L’associazione raggiunge oltre 480 associati di tutte le età, diventando un punto di riferimento per la comunità bresciana.',
-        icona: Users,
-    },
-    {
-        anno: '2023',
-        titolo: 'Centro Aperto Sandro Marelli',
-        descrizione:
-            'Apre il Centro Aperto Sandro Marelli, nuova sede operativa per attività e servizi rivolti agli anziani e alle famiglie.',
-        icona: Star,
-    },
-    {
-        anno: '2024',
-        titolo: 'Innovazione e nuovi progetti',
-        descrizione:
-            'L’associazione continua a innovare, promuovendo nuovi progetti e iniziative per il benessere della comunità.',
-        icona: Heart,
-    },
 ];
 
 // Funzione per creare slug dai titoli dei progetti
