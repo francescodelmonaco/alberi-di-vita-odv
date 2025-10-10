@@ -1,5 +1,3 @@
-import type { ElementType } from "react";
-
 export interface Social {
     name: string;
     link: string;
@@ -51,7 +49,7 @@ export interface Event {
     anno: string,
     titolo: string,
     descrizione: string,
-    icona: ElementType,
+    icona: any,
 }
 
 export interface ProjectCardProps {

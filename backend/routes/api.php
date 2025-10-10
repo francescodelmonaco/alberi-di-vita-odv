@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/partners', [PartnerController::class, 'index']);
 Route::get('/phones', [PhoneController::class, 'index']);
 Route::get('/emails', [EmailController::class, 'index']);
+Route::get('/events', [EventController::class, 'index']);
